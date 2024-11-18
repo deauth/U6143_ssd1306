@@ -19,6 +19,23 @@ cd U6143_ssd1306/C
 ```bash
 make 
 ```
+## Milk-V Mars running Ubuntu
+
+Sudo Nano ssd1306_i2c.c
+
+Change
+unsigned char i2c[20]="/dev/i2c-1";
+to
+unsigned char i2c[20]="/dev/i2c-0";
+
+strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);     
+to
+strncpy(ifr.ifr_name, "end0", IFNAMSIZ-1);
+
+sudo make clean&&make
+
+
+
 ## Run the display
 ```bash 
 sudo ./display 
