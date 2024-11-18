@@ -23,6 +23,31 @@ make
 ```bash 
 sudo ./display 
 ```
+## Code changes for Milk-V Mars Rick-V SBC
+
+Edit U6143_ssd1306.c
+```bash 
+sudo  nano ./U6143_ssd1306.c
+```
+sudo nano ./U6143_ssd1306.c
+
+Change  
+
+unsigned char i2c[20]="/dev/i2c-1";
+to
+unsigned char i2c[20]="/dev/i2c-0";
+
+and
+
+strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);
+to
+strncpy(ifr.ifr_name, "end0", IFNAMSIZ-1);
+
+Recompile 
+```bash 
+sudo make clean&&make
+```
+
 
 ## python code
 
